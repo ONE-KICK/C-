@@ -1,25 +1,18 @@
-#include<iostream>   //¿ÍËÆÔÆÀ´ Å£¿Í
+#include<iostream>
 #include<vector>
 using namespace std;
 int main()
 {
-	int from, to;
-	long long count;
-	while (cin >> from >> to)
+	int n;
+	while (cin >> n)
 	{
-		count = 0;
-		vector<long long>v(80, 0);
-		v[0] = 1;
+		vector<long long>v(91, 0);
 		v[1] = 1;
-		for (int i = 2; i < 80; i++)
+		v[2] = 1;
+		for (int i = 3; i <= 90; ++i)
 		{
 			v[i] = v[i - 2] + v[i - 1];
 		}
-		for (int i = from - 1; i < to; ++i)
-		{
-			count += v[i];
-		}
-		cout << count << endl;
-	}
-	return 0;
+		cout << v[n] << endl;
+	}return 0;
 }
